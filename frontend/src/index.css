@@ -1,0 +1,301 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  /* Fonts */
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600&display=swap');
+
+  :root {
+    /* Light Mode – Fresh Mint */
+    --background: 150 100% 98%;
+    /* #F9FFFB */
+    --foreground: 0 0% 12%;
+    /* #1E1E1E */
+
+    --card: 0 0% 100%;
+    /* #FFFFFF */
+    --card-foreground: 0 0% 12%;
+
+    --primary: 141 50% 55%;
+    /* #57C062 */
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 140 62% 79%;
+    /* #A8E8B6 */
+
+    --secondary: 140 76% 88%;
+    /* #C8F6D0 */
+    --secondary-foreground: 0 0% 12%;
+
+    --muted: 140 80% 92%;
+    /* Hover: #DDFCE4 */
+    --muted-foreground: 0 0% 29%;
+    /* Secondary Text: #4B4B4B */
+
+    --success: 122 39% 49%;
+    /* #4CAF50 */
+    --warning: 45 100% 51%;
+    /* #FFC107 */
+    --info: 188 100% 41%;
+    /* #00BCD4 */
+    --destructive: 4 90% 58%;
+    /* Error: #F44336 */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 140 40% 90%;
+    --input: 140 40% 96%;
+    --ring: 141 50% 55%;
+
+    --radius: 0.75rem;
+
+    --gradient-primary: linear-gradient(135deg, #A8E8B6, #57C062);
+    --gradient-soft: linear-gradient(135deg, #C8F6D0, #E8FFF0);
+    --shadow-card: 0 8px 20px -6px hsl(141 30% 30% / 0.12);
+    --shadow-elevated: 0 16px 40px -10px hsl(141 30% 30% / 0.16);
+
+    /* Typography */
+    --font-heading: 'Poppins', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    --font-body: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+
+    /* Sidebar (light) */
+    --sidebar-background: 140 76% 88%;
+    /* #C8F6D0 */
+    --sidebar-hover: 140 80% 92%;
+    /* #DDFCE4 */
+    --sidebar-foreground: 0 0% 12%;
+    /* #1E1E1E */
+    --sidebar-foreground-hover: 148 41% 21%;
+    --sidebar-border: 140 30% 88%;
+    --sidebar-icon: 141 40% 40%;
+    --sidebar-hover-alt: 141 60% 85%;
+
+    /* Map additional sidebar tokens expected by tailwind config */
+    --sidebar-primary: var(--primary);
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: var(--sidebar-hover);
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-ring: var(--primary-hover);
+
+    /* Primary hover/active tokens */
+    --primary-hover: 141 50% 50%;
+    --primary-active: 141 50% 45%;
+  }
+
+  .dark {
+    /* Dark Mode – Emerald Orbit */
+    --background: 0 0% 5%;
+    /* #0D0D0D */
+    --foreground: 0 0% 100%;
+    /* #FFFFFF */
+    --card: 0 0% 10%;
+    /* #1A1A1A */
+    --card-foreground: 0 0% 100%;
+
+    --primary: 141 50% 55%;
+    /* #57C062 */
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 140 62% 79%;
+    /* Accent: #A8E8B6 */
+
+    --secondary: 140 62% 79%;
+    /* Accent */
+    --secondary-foreground: 0 0% 12%;
+
+    --muted: 120 14% 15%;
+    /* #1F2A1F */
+    --muted-foreground: 0 0% 85%;
+    /* #DADADA */
+
+    --success: 131 78% 68%;
+    /* #6FEA7B */
+    --warning: 45 100% 65%;
+    /* #FFD54F */
+    --info: 187 70% 58%;
+    /* #4DD0E1 */
+    --destructive: 6 100% 69%;
+    /* #FF6F61 */
+    --destructive-foreground: 0 0% 0%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 14%;
+    --ring: 141 50% 55%;
+
+    --sidebar-background: 0 0% 8%;
+    /* #141414 */
+    --sidebar-hover: 120 14% 15%;
+    /* #1F2A1F */
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-icon: 140 62% 79%;
+    /* #A8E8B6 */
+    --sidebar-hover-alt: 141 20% 18%;
+
+    --shadow-card: 0 8px 20px -6px hsl(0 0% 0% / 0.5);
+    --shadow-elevated: 0 16px 40px -10px hsl(0 0% 0% / 0.6);
+
+    /* Dark gradient */
+    --gradient-primary: linear-gradient(135deg, #1A1A1A, #57C062);
+  }
+}
+
+@layer base {
+  * {
+    /* approximate of `@apply border-border` to keep editor/linter happy */
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    /* approximate of `@apply bg-background text-foreground antialiased` */
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: var(--font-body);
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  /* Sidebar utilities */
+  .sidebar-item {
+    transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    background: transparent;
+  }
+
+  .sidebar-item:hover {
+    background: hsl(var(--sidebar-hover));
+  }
+
+  /* Glass effect utilities */
+  .glass {
+    @apply bg-card/70 backdrop-blur-lg border border-white/10;
+  }
+
+  .glass-strong {
+    @apply bg-card/80 backdrop-blur-xl border border-white/20;
+  }
+
+  .glass-subtle {
+    @apply bg-card/50 backdrop-blur-md border border-white/5;
+  }
+
+  /* Card entrance animation */
+  .card {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: cardFadeIn 0.6s ease forwards;
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 0 10px #A8E8B6, var(--shadow-elevated);
+  }
+
+  @keyframes cardFadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Input focus glow */
+  input:focus,
+  textarea:focus {
+    box-shadow: 0 0 8px rgba(47, 133, 90, 0.5);
+    border-color: hsl(var(--primary));
+    transition: box-shadow 0.3s ease, border 0.3s ease;
+  }
+
+  input,
+  textarea,
+  select {
+    border-radius: 1rem;
+    /* rounded-2xl */
+  }
+
+  /* Button hover & press helpers */
+  .btn-primary {
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    transition: all 0.25s ease;
+  }
+
+  .btn-primary:hover {
+    background: hsl(var(--primary-hover));
+    transform: scale(1.03);
+    box-shadow: 0 4px 12px rgba(87, 192, 98, 0.20), 0 0 10px #A8E8B6;
+  }
+
+  .btn-primary:active {
+    transform: scale(0.97);
+  }
+
+  /* Page transition wrapper */
+  .page-transition {
+    animation: fadeSlide 0.5s ease;
+  }
+
+  @keyframes fadeSlide {
+    from {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Ripple helper - add class 'ripple' to buttons to enable */
+  .ripple {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ripple::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(0);
+    transition: transform 0.5s, opacity 1s;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .ripple:active::after {
+    transform: scale(2);
+    opacity: 1;
+    transition: 0s;
+  }
+}

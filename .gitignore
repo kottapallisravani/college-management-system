@@ -1,0 +1,35 @@
+# Node / general
+node_modules/
+dist/
+build/
+/.cache/
+
+# Env files
+.env
+.env.local
+.env.*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+*.log
+
+# OS & editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Temporary
+*.tmp
+*.temp
+*.local
+
+# VSCode workspace file
+.vscode/*.code-workspace
